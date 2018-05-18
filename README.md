@@ -9,7 +9,7 @@ composer require simivar/tibiadata-api php-http/message php-http/guzzle6-adapter
 ```
 
 ## Usage
-> **Note:** This version of Genius PHP requires PHP version of 7.1 or higher.
+> **Note:** This version of TibiaData API requires PHP version of 7.1 or higher.
 
 You can use every resource available with classes from *Resources* namespace. You can create main `TibiaData` object and use getters or create every object on your own. 
 
@@ -21,7 +21,8 @@ $upvoteAnnotation = $tibiaData->getCharactersResoure()->get( 'Simivar' );
 ```
 
 ## Versioning
-Genius PHP is created using [Semver](http://semver.org/). All minor and patch updates are backwards compatibile.
+Created using [Semver](http://semver.org/). All minor and patch updates are backwards compatibile.
+Also, it strictly follows TibiaData API versioning. Version 2.0 of library supports `v2` of TibiaData API.
 
 ## License
 Please see the [license file](https://github.com/simivar/tibiadata-api/blob/master/LICENSE) for more information.
