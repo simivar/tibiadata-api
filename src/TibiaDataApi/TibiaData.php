@@ -17,6 +17,7 @@ use Http\Message\MessageFactory;
  * @method Resources\CharactersResource getCharactersResource()
  * @method Resources\GuildResource getGuildResource()
  * @method Resources\GuildsResource getGuildsResource()
+ * @method Resources\HighscoresResource getHighscoresResource()
  */
 class TibiaData
 {
