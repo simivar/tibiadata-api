@@ -10,6 +10,12 @@ use Http\Discovery\MessageFactoryDiscovery;
 use Http\Message\Authentication;
 use Http\Message\MessageFactory;
 
+/**
+ * Class TibiaData
+ * @package TibiaDataApi
+ *
+ * @method Resources\CharactersResource getCharactersResource()
+ */
 class TibiaData
 {
 
