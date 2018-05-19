@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace TibiaDataApi\Resources;
+namespace TibiaDataApi\Resource;
 
 use TibiaDataApi\Response\HighscoresResponse;
 

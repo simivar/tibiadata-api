@@ -14,13 +14,13 @@ use Http\Message\MessageFactory;
  * Class TibiaData
  * @package TibiaDataApi
  *
- * @method Resources\CharactersResource getCharactersResource()
- * @method Resources\GuildResource getGuildResource()
- * @method Resources\GuildsResource getGuildsResource()
- * @method Resources\HighscoresResource getHighscoresResource()
- * @method Resources\HousesResource getHousesResource()
- * @method Resources\NewsResource getNewsResource()
- * @method Resources\WorldsResource getWorldsResource()
+ * @method Resource\CharactersResource getCharactersResource()
+ * @method Resource\GuildResource getGuildResource()
+ * @method Resource\GuildsResource getGuildsResource()
+ * @method Resource\HighscoresResource getHighscoresResource()
+ * @method Resource\HousesResource getHousesResource()
+ * @method Resource\NewsResource getNewsResource()
+ * @method Resource\WorldsResource getWorldsResource()
  */
 class TibiaData
 {
@@ -73,7 +73,7 @@ class TibiaData
             return false;
         }
 
-        $name = '\\TibiaDataApi\\Resources\\' . substr($name, 3);
+        $name = '\\TibiaDataApi\\Resource\\' . substr($name, 3);
         if (!class_exists($name)) {
             return false;
         }

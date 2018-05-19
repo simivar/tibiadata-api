@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace TibiaDataApi\Resources;
+namespace TibiaDataApi\Resource;
 
 use TibiaDataApi\TibiaData;
 
@@ -27,7 +27,7 @@ class AbstractResource
     ): \stdClass {
         $req =  $this->tibiaData->getRequestFactory()->createRequest($method, self::API_URL . $uri, $headers, $body, $protocolVersion);
         
-        return json_decode($this->tibiaData->getHttpClient()->sendRequest($req)->getBody());
+        return json_decode($this->tibiaData->getHttpClient()->sendRequest($req)->getBody()->getContents());
     }
     
 }
