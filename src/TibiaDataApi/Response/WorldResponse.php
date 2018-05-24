@@ -16,7 +16,7 @@ class WorldResponse extends AbstractResponse
 
     public function __construct(\stdClass $response)
     {
-        if(!isset($response->world->pvp_type)){
+        if(!isset($response->world->world_information->pvp_type)){
             throw new NotFoundException('World does not exists.');
         }
 
