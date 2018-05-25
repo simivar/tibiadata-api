@@ -4,11 +4,12 @@ declare(strict_types=1);
 namespace TibiaDataApi\Entity\Guild;
 
 use TibiaDataApi\Entity\ImmutableTrait;
+use TibiaDataApi\Entity\SerializableTrait;
 
-class Members
+class Members implements \JsonSerializable
 {
 
-    use ImmutableTrait;
+    use ImmutableTrait, SerializableTrait;
     
     /** @var string */
     private $rank_title;

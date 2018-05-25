@@ -4,11 +4,12 @@ declare(strict_types=1);
 namespace TibiaDataApi\Entity\Character;
 
 use TibiaDataApi\Entity\ImmutableTrait;
+use TibiaDataApi\Entity\SerializableTrait;
 
-class AccountInformation
+class AccountInformation implements \JsonSerializable
 {
 
-    use ImmutableTrait;
+    use ImmutableTrait, SerializableTrait;
 
     /** @var string */
     private $loyalty_title;

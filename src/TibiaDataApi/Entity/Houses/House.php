@@ -4,11 +4,12 @@ declare(strict_types=1);
 namespace TibiaDataApi\Entity\Houses;
 
 use TibiaDataApi\Entity\ImmutableTrait;
+use TibiaDataApi\Entity\SerializableTrait;
 
-class House
+class House implements \JsonSerializable
 {
 
-    use ImmutableTrait;
+    use ImmutableTrait, SerializableTrait;
 
     /** @var int */
     private $houseid;

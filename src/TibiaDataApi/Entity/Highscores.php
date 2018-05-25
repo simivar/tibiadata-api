@@ -5,10 +5,10 @@ namespace TibiaDataApi\Entity;
 
 use TibiaDataApi\Entity\Highscores\Character;
 
-class Highscores
+class Highscores implements \JsonSerializable
 {
 
-    use ImmutableTrait;
+    use ImmutableTrait, SerializableTrait;
 
     /** @var string */
     private $world;

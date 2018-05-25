@@ -5,10 +5,10 @@ namespace TibiaDataApi\Entity;
 
 use TibiaDataApi\Entity\Houses\House;
 
-class Houses
+class Houses implements \JsonSerializable
 {
 
-    use ImmutableTrait;
+    use ImmutableTrait, SerializableTrait;
 
     /** @var string */
     private $town;

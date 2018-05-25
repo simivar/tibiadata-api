@@ -7,10 +7,10 @@ use TibiaDataApi\Entity\Character\Death;
 use TibiaDataApi\Entity\Character\Guild;
 use TibiaDataApi\Entity\Character\OtherCharacter;
 
-class Character
+class Character implements \JsonSerializable
 {
 
-    use ImmutableTrait;
+    use ImmutableTrait, SerializableTrait;
 
     /** @var string */
     private $name;

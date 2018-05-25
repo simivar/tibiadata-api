@@ -3,10 +3,10 @@ declare(strict_types=1);
 
 namespace TibiaDataApi\Entity;
 
-class Information
+class Information implements \JsonSerializable
 {
 
-    use ImmutableTrait;
+    use ImmutableTrait, SerializableTrait;
 
     /** @var int */
     private $api_version;

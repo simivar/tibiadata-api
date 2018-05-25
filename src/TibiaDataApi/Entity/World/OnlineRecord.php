@@ -4,11 +4,12 @@ declare(strict_types=1);
 namespace TibiaDataApi\Entity\World;
 
 use TibiaDataApi\Entity\ImmutableTrait;
+use TibiaDataApi\Entity\SerializableTrait;
 
-class OnlineRecord
+class OnlineRecord implements \JsonSerializable
 {
 
-    use ImmutableTrait;
+    use ImmutableTrait, SerializableTrait;
 
     /** @var string */
     private $number;

@@ -6,10 +6,10 @@ namespace TibiaDataApi\Entity;
 use TibiaDataApi\Entity\World\Character;
 use TibiaDataApi\Entity\World\OnlineRecord;
 
-class World
+class World implements \JsonSerializable
 {
 
-    use ImmutableTrait;
+    use ImmutableTrait, SerializableTrait;
 
     /** @var string */
     private $name;

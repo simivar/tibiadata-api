@@ -5,10 +5,10 @@ namespace TibiaDataApi\Entity;
 
 use TibiaDataApi\Entity\Guilds\Guild;
 
-class Guilds
+class Guilds implements \JsonSerializable
 {
 
-    use ImmutableTrait;
+    use ImmutableTrait, SerializableTrait;
 
     /** @var string */
     private $world;

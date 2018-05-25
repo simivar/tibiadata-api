@@ -5,10 +5,10 @@ namespace TibiaDataApi\Entity;
 
 use TibiaDataApi\Entity\Worlds\World;
 
-class Worlds
+class Worlds implements \JsonSerializable
 {
 
-    use ImmutableTrait;
+    use ImmutableTrait, SerializableTrait;
 
     /** @var int */
     private $online;

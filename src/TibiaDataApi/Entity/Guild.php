@@ -7,10 +7,10 @@ use TibiaDataApi\Entity\Guild\Guildhall;
 use TibiaDataApi\Entity\Guild\Members;
 use TibiaDataApi\Entity\Guild\Invited;
 
-class Guild
+class Guild implements \JsonSerializable
 {
 
-    use ImmutableTrait;
+    use ImmutableTrait, SerializableTrait;
 
     /** @var string */
     private $name;
