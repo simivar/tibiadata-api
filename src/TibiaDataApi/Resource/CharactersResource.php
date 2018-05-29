@@ -13,7 +13,7 @@ class CharactersResource extends AbstractResource
     
     public function get(string $name): CharacterResponse
     {
-        $response = $this->sendRequest('GET', "characters/{$name}.json");
+        $response = $this->sendRequest('GET', "/characters/{$name}.json");
         
         return new CharacterResponse($response);
     }

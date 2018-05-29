@@ -17,7 +17,7 @@ use Psr\Http\Message\UriInterface;
 class Connection
 {
     
-    protected $endpoint = 'https://api.tibiadata.com/v2/';
+    protected $endpoint = 'https://api.tibiadata.com';
     
     /** @var HttpClient */
     protected $httpClient;

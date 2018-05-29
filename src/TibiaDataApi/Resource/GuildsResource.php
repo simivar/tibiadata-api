@@ -13,7 +13,7 @@ class GuildsResource extends AbstractResource
     
     public function get(string $server): GuildsResponse
     {
-        $response = $this->sendRequest('GET', "guilds/{$server}.json");
+        $response = $this->sendRequest('GET', "/guilds/{$server}.json");
 
         return new GuildsResponse($response);
     }

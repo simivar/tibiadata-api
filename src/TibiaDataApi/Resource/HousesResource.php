@@ -20,7 +20,7 @@ class HousesResource extends AbstractResource
             throw new \InvalidArgumentException('Invalid type.');
         }
 
-        $response = $this->sendRequest('GET', "houses/{$world}/{$town}/{$type}.json");
+        $response = $this->sendRequest('GET', "/houses/{$world}/{$town}/{$type}.json");
         
         return new HousesResponse($response);
     }
