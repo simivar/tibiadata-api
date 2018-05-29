@@ -77,4 +77,36 @@ class World implements \JsonSerializable
         return $this->additional;
     }
 
+    /**
+     * @return bool
+     */
+    public function isBlocked(): bool
+    {
+        return strpos('blocked', $this->additional) !== false;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isPremium(): bool
+    {
+        return strpos('premium', $this->additional) !== false;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isLocked(): bool
+    {
+        return strpos('locked', $this->additional) !== false;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isExperimental(): bool
+    {
+        return strpos('experimental game world', $this->additional) !== false;
+    }
+
 }
