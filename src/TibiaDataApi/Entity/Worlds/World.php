@@ -24,7 +24,7 @@ class World implements \JsonSerializable
     private $type;
 
     /** @var string */
-    private $additional;
+    private $additional = '';
 
     public function __construct(string $name, int $online, string $location, string $type, string $additional)
     {
@@ -82,7 +82,7 @@ class World implements \JsonSerializable
      */
     public function isBlocked(): bool
     {
-        return strpos('blocked', $this->additional) !== false;
+        return strpos($this->additional, 'blocked') !== false;
     }
 
     /**
@@ -90,7 +90,7 @@ class World implements \JsonSerializable
      */
     public function isPremium(): bool
     {
-        return strpos('premium', $this->additional) !== false;
+        return strpos($this->additional, 'premium') !== false;
     }
 
     /**
@@ -98,7 +98,7 @@ class World implements \JsonSerializable
      */
     public function isLocked(): bool
     {
-        return strpos('locked', $this->additional) !== false;
+        return strpos($this->additional, 'locked') !== false;
     }
 
     /**
@@ -106,7 +106,7 @@ class World implements \JsonSerializable
      */
     public function isExperimental(): bool
     {
-        return strpos('experimental game world', $this->additional) !== false;
+        return strpos($this->additional, 'experimental game world') !== false;
     }
 
 }
