@@ -16,7 +16,7 @@ class CharacterResponse extends AbstractResponse
 {
 
     /** @var Character */
-    private $characters;
+    private $character;
 
     public function __construct(\stdClass $response)
     {
@@ -71,17 +71,19 @@ class CharacterResponse extends AbstractResponse
             $guild = new Guild($response->characters->data->guild->name, $response->characters->data->guild->rank);
         }
 
-        $this->characters = Character::createFromArray([
+        $this->character = Character::createFromArray([
             'name' => $response->characters->data->name,
+            'former_names' => $response->characters->data->former_names ?? array(),
             'sex' => $response->characters->data->sex,
             'vocation' => $response->characters->data->vocation,
             'level' => $response->characters->data->level,
             'achievement_points' => $response->characters->data->achievement_points,
             'world' => $response->characters->data->world,
+            'former_world' => $response->characters->data->former_world ?? null,
             'residence' => $response->characters->data->residence,
             'guild' => $guild,
             'last_login' => new \DateTime($response->characters->data->last_login[0]->date, new \DateTimeZone($response->characters->data->last_login[0]->timezone)),
-            'comment' => isset($response->characters->data->comment) ? $response->characters->data->comment : '',
+            'comment' => $response->characters->data->comment ?? '',
             'account_status' => $response->characters->data->account_status,
             'status' => $response->characters->data->status,
             'achivements' => $achivements,
@@ -94,11 +96,11 @@ class CharacterResponse extends AbstractResponse
     }
 
     /**
-     * @return Guilds
+     * @return Character
      */
-    public function getGuilds(): Guilds
+    public function getCharacter(): Character
     {
-        return $this->guilds;
+        return $this->character;
     }
     
 }

@@ -2,6 +2,7 @@
 
 namespace TibiaDataApi\Entity;
 
+use TibiaDataApi\Entity\Character\AccountInformation;
 use TibiaDataApi\Entity\Character\Achievement;
 use TibiaDataApi\Entity\Character\Death;
 use TibiaDataApi\Entity\Character\Guild;
@@ -14,6 +15,9 @@ class Character implements \JsonSerializable
 
     /** @var string */
     private $name;
+
+    /** @var array */
+    private $former_names = array();
 
     /** @var string */
     private $sex;
@@ -29,6 +33,9 @@ class Character implements \JsonSerializable
 
     /** @var string */
     private $world;
+
+    /** @var string|null */
+    private $former_world;
 
     /** @var string */
     private $residence;
@@ -73,9 +80,11 @@ class Character implements \JsonSerializable
     {
         $character = new Character($response['name'], $response['vocation'], $response['level']);
 
+        $character->former_names = $response['former_names'];
         $character->sex = $response['sex'];
         $character->achievement_points = $response['achievement_points'];
         $character->world = $response['world'];
+        $character->former_world = $response['former_world'];
         $character->residence = $response['residence'];
         $character->guild = $response['guild'];
         $character->last_login = $response['last_login'];
@@ -112,6 +121,14 @@ class Character implements \JsonSerializable
     public function getName(): string
     {
         return $this->name;
+    }
+
+    /**
+     * @return array
+     */
+    public function getFormerNames(): array
+    {
+        return $this->former_names;
     }
 
     /**
@@ -152,6 +169,14 @@ class Character implements \JsonSerializable
     public function getWorld(): string
     {
         return $this->world;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getFormerWorld(): ?string
+    {
+        return $this->former_world;
     }
 
     /**
