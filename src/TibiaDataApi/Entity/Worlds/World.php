@@ -98,7 +98,7 @@ class World implements \JsonSerializable
      */
     public function isLocked(): bool
     {
-        return strpos($this->additional, 'locked') !== false;
+        return (bool) preg_match('/\blocked\b/', $this->additional);
     }
 
     /**
