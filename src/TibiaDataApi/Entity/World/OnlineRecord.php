@@ -11,7 +11,7 @@ class OnlineRecord implements \JsonSerializable
 
     use ImmutableTrait, SerializableTrait;
 
-    /** @var string */
+    /** @var int */
     private $number;
 
     /** @var \DateTime */
@@ -26,9 +26,9 @@ class OnlineRecord implements \JsonSerializable
     }
 
     /**
-     * @return string
+     * @return int
      */
-    public function getNumber(): string
+    public function getNumber(): int
     {
         return $this->number;
     }
