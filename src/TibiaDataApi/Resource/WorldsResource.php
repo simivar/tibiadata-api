@@ -14,14 +14,14 @@ class WorldsResource extends AbstractResource
 
     public function get(string $name): WorldResponse
     {
-        $response = $this->sendRequest('GET', "/world/{$name}.json");
+        $response = $this->sendRequest('GET', "world/{$name}.json");
 
         return new WorldResponse($response);
     }
 
     public function getList(): WorldsResponse
     {
-        $response = $this->sendRequest('GET', "/worlds.json");
+        $response = $this->sendRequest('GET', "worlds.json");
 
         return new WorldsResponse($response);
     }

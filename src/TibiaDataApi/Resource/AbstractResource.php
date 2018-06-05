@@ -8,7 +8,7 @@ use TibiaDataApi\TibiaData;
 class AbstractResource
 {
     
-    const API_URL = 'v2/';
+    const API_URL = '/v2/';
 
     /** @var TibiaData */
     protected $tibiaData;

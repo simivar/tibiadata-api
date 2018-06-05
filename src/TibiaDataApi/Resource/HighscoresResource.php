@@ -36,7 +36,7 @@ class HighscoresResource extends AbstractResource
             throw new \InvalidArgumentException('Invalid type or vocation.');
         }
 
-        $response = $this->sendRequest('GET', "/highscores/{$server}/{$type}/{$vocation}.json");
+        $response = $this->sendRequest('GET', "highscores/{$server}/{$type}/{$vocation}.json");
 
         return new HighscoresResponse($response);
     }
