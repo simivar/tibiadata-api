@@ -43,7 +43,7 @@ class Character implements \JsonSerializable
     /** @var Guild|null */
     private $guild;
 
-    /** @var \DateTime */
+    /** @var \DateTime|null */
     private $last_login;
     
     /** @var string */
@@ -196,9 +196,9 @@ class Character implements \JsonSerializable
     }
 
     /**
-     * @return \DateTime
+     * @return \DateTime|null
      */
-    public function getLastLogin(): \DateTime
+    public function getLastLogin(): ?\DateTime
     {
         return $this->last_login;
     }

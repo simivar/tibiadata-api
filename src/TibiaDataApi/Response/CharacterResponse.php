@@ -71,6 +71,14 @@ class CharacterResponse extends AbstractResponse
             $guild = new Guild($response->characters->data->guild->name, $response->characters->data->guild->rank);
         }
 
+        $lastLogin = null;
+        if(isset($response->characters->data->last_logi)){
+            $lastLogin = new \DateTime(
+                $response->characters->data->last_login[0]->date,
+                new \DateTimeZone($response->characters->data->last_login[0]->timezone)
+            );
+        }
+
         $this->character = Character::createFromArray([
             'name' => $response->characters->data->name,
             'former_names' => $response->characters->data->former_names ?? array(),
@@ -82,7 +90,7 @@ class CharacterResponse extends AbstractResponse
             'former_world' => $response->characters->data->former_world ?? null,
             'residence' => $response->characters->data->residence,
             'guild' => $guild,
-            'last_login' => new \DateTime($response->characters->data->last_login[0]->date, new \DateTimeZone($response->characters->data->last_login[0]->timezone)),
+            'last_login' => $lastLogin,
             'comment' => $response->characters->data->comment ?? '',
             'account_status' => $response->characters->data->account_status,
             'status' => $response->characters->data->status,
