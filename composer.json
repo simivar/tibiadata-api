@@ -3,7 +3,7 @@
   "description": "TibiaData API is a open source library that allows you to access TibiaData API from your PHP application. Supports every resource. Follows Semver and TibiaData API versioning.",
   "keywords": ["tibia", "tibiadata", "api", "psr-4", "httplug"],
   "homepage": "https://github.com/simivar/tibiadata-api",
-  "version": "2.3.3",
+  "version": "2.3.4",
   "type": "library",
   "license": "MIT",
   "authors": [
