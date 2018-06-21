@@ -22,7 +22,11 @@ class HighscoresResponse extends AbstractResponse
         $highscores = [];
         foreach($response->highscores->data as $highscore){
             $highscores[] = new Character(
-                $highscore->name, $highscore->rank, $highscore->voc, $highscore->points, $highscore->level
+                $highscore->name,
+                $highscore->rank,
+                $highscore->voc,
+                $highscore->points ?? null,
+                $highscore->level ?? null
             );
         }
 

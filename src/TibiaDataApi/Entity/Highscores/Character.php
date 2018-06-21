@@ -20,13 +20,13 @@ class Character implements \JsonSerializable
     /** @var string */
     private $vocation;
 
-    /** @var float */
+    /** @var float|null */
     private $points;
 
-    /** @var int */
+    /** @var int|null */
     private $level;
 
-    public function __construct(string $name, int $rank, string $vocation, float $points, int $level)
+    public function __construct(string $name, int $rank, string $vocation, ?float $points, ?int $level)
     {
         $this->handleImmutableConstructor();
 
@@ -62,17 +62,17 @@ class Character implements \JsonSerializable
     }
 
     /**
-     * @return float
+     * @return float|null
      */
-    public function getPoints(): float
+    public function getPoints(): ?float
     {
         return $this->points;
     }
 
     /**
-     * @return int
+     * @return int|null
      */
-    public function getLevel(): int
+    public function getLevel(): ?int
     {
         return $this->level;
     }
