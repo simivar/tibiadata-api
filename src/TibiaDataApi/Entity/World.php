@@ -132,5 +132,24 @@ class World implements \JsonSerializable
     {
         return $this->players_online;
     }
+    
+    /**
+     * Gets DateTime from battleye status string.
+     *
+     * @return \DateTime|null
+     */
+    public function getBattleyedAt(): ?\DateTime
+    {
+        if($this->battleye_status === 'Not protected by BattlEye.'){
+            return null;
+        }
+        
+        if($this->battleye_status === 'Protected by BattlEye since its release.'){
+            return new \DateTime($this->creation_date . '-01');
+        }
+        
+        preg_match('/Protected by BattlEye since ([a-zA-Z0-9, ]+)\./', $this->battleye_status, $matches);
+        return new \DateTime::createFromFormat('F d, Y', $matches[1]);
+    }
 
 }
